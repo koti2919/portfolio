@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/* ================================
+   ROOT VARIABLES
+================================ */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* ================================
+   GLOBAL RESET
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  /* Background Image */
+  background-color: #ffffff;
+  background-image: url("/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  /* Text */
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Better rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================
+   PAGE OVERLAY
+   Makes text easier to read
+================================ */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  pointer-events: none;
+}
+
+/* ================================
+   PREVENT HORIZONTAL SCROLL
+================================ */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================================
+   PROFESSIONAL SCROLLBAR
+================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* ================================
+   TEXT SELECTION
+================================ */
+
+::selection {
+  background: #171717;
+  color: #ffffff;
+}
+
+/* ================================
+   LINKS
+================================ */
+
+a {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: center;
+  }
+
+  body::before {
+    background: rgba(255, 255, 255, 0.45);
+  }
+}
