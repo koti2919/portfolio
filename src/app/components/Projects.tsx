@@ -145,7 +145,6 @@ export default function Projects() {
                 <div className="mt-6">
 
                   <span className="inline-flex rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-gray-500">
-                    Links Coming Soon
                   </span>
 
                 </div>

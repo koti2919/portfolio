@@ -29,6 +29,21 @@ export default function Hero() {
 
       <div className="mx-auto max-w-5xl text-center">
 
+        {/* PROFILE PHOTO */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="mb-8 flex justify-center"
+        >
+          <div className="h-32 w-32 overflow-hidden rounded-full border-4 border-gray-900 bg-white p-1 shadow-xl sm:h-36 sm:w-36">
+            <img
+              src="/profile.jpg"
+              className="h-full w-full rounded-full object-cover"
+            />
+          </div>
+        </motion.div>
+
         {/* Availability */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -100,7 +115,6 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-10 flex flex-col justify-center gap-4 sm:flex-row"
         >
-
           {/* PROJECTS */}
           <a
             href="#projects"
@@ -118,12 +132,11 @@ export default function Hero() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border-2 border-gray-900 bg-white/90 px-8 py-4 font-bold text-gray-900 shadow-md backdrop-blur transition duration-300 hover:scale-105 hover:bg-gray-900 hover:text-white"
+            className="rounded-full border-2 border-gray-900 bg-white px-8 py-4 font-bold text-gray-900 shadow-md transition duration-300 hover:scale-105 hover:bg-gray-900 hover:text-white"
           >
             View Resume
             <span className="ml-2">↗</span>
           </a>
-
         </motion.div>
 
         {/* SOCIAL LINKS */}
@@ -133,7 +146,6 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-12 flex justify-center gap-8 text-sm font-semibold text-gray-700"
         >
-
           <a
             href="https://github.com/koti2919"
             target="_blank"
@@ -162,7 +174,6 @@ export default function Hero() {
           >
             Email
           </a>
-
         </motion.div>
 
         {/* SCROLL */}

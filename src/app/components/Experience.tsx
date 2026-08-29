@@ -12,7 +12,6 @@ const timeline = [
       "Currently pursuing a B.Tech in Computer Science Engineering with a strong foundation in programming, software development, artificial intelligence and modern web technologies.",
     details: [
       "CGPA: 7.71 / 10",
-      "Completed: 6 Semesters",
     ],
   },
   {
