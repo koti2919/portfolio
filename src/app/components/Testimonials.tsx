@@ -30,7 +30,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="border-t border-white/10"
+      className="border-t border-black/10 bg-transparent text-black"
     >
       <div className="mx-auto max-w-7xl px-6 py-32">
 
@@ -41,19 +41,17 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
+          <p className="text-sm uppercase tracking-[0.3em] text-gray-600">
             07 — What I Bring
           </p>
 
-          <h2 className="mt-5 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl">
+          <h2 className="mt-5 text-5xl font-bold tracking-tight text-black sm:text-6xl md:text-8xl">
             More than
             <br />
-            <span className="text-gray-500">
-              just code.
-            </span>
+            <span className="text-gray-500">just code.</span>
           </h2>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-700">
             My approach to software development is built around
             continuous learning, practical problem solving and
             creating useful technology solutions.
@@ -62,7 +60,6 @@ export default function Testimonials() {
 
         {/* HIGHLIGHTS */}
         <div className="mt-20 grid gap-6 md:grid-cols-3">
-
           {highlights.map((item, index) => (
             <motion.div
               key={item.number}
@@ -84,55 +81,48 @@ export default function Testimonials() {
               whileHover={{
                 y: -8,
               }}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-colors duration-500 hover:border-white/30 md:p-10"
+              className="group relative overflow-hidden rounded-3xl border border-black/10 bg-white/60 p-8 shadow-sm backdrop-blur-md transition-all duration-500 hover:border-black/20 hover:bg-white/75 hover:shadow-lg md:p-10"
             >
-
-              {/* Background Glow */}
-              <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-white/[0.03] blur-3xl transition duration-500 group-hover:bg-white/[0.07]" />
+              {/* BACKGROUND GLOW */}
+              <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-black/[0.03] blur-3xl transition duration-500 group-hover:bg-black/[0.07]" />
 
               <div className="relative">
 
                 {/* NUMBER */}
                 <div className="flex items-center justify-between">
-
-                  <span className="text-sm tracking-[0.2em] text-gray-600">
+                  <span className="text-sm tracking-[0.2em] text-gray-500">
                     {item.number}
                   </span>
 
-                  <span className="text-3xl text-white/10 transition duration-500 group-hover:text-white/30">
+                  <span className="text-3xl text-black/20 transition duration-500 group-hover:translate-x-1 group-hover:text-black/50">
                     ↗
                   </span>
-
                 </div>
 
                 {/* TITLE */}
-                <h3 className="mt-10 text-2xl font-bold md:text-3xl">
+                <h3 className="mt-10 text-2xl font-bold text-black md:text-3xl">
                   {item.title}
                 </h3>
 
                 {/* DESCRIPTION */}
-                <p className="mt-5 leading-7 text-gray-400">
+                <p className="mt-5 leading-7 text-gray-700">
                   {item.description}
                 </p>
 
                 {/* TAGS */}
                 <div className="mt-8 flex flex-wrap gap-3">
-
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-white/10 bg-black px-4 py-2 text-xs text-gray-400 transition duration-300 group-hover:border-white/20 group-hover:text-gray-300"
+                      className="rounded-full border border-black/10 bg-white/70 px-4 py-2 text-xs text-gray-700 transition duration-300 group-hover:border-black/20 group-hover:bg-white group-hover:text-black"
                     >
                       {tag}
                     </span>
                   ))}
-
                 </div>
-
               </div>
             </motion.div>
           ))}
-
         </div>
 
         {/* BOTTOM MESSAGE */}
@@ -152,9 +142,8 @@ export default function Testimonials() {
             duration: 0.7,
             delay: 0.3,
           }}
-          className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10"
+          className="mt-8 rounded-3xl border border-black/10 bg-white/60 p-8 shadow-sm backdrop-blur-md transition duration-500 hover:border-black/20 hover:bg-white/75 md:p-10"
         >
-
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 
             <div>
@@ -162,23 +151,21 @@ export default function Testimonials() {
                 Developer Mindset
               </p>
 
-              <h3 className="mt-4 text-2xl font-bold md:text-3xl">
+              <h3 className="mt-4 text-2xl font-bold text-black md:text-3xl">
                 Learn. Build. Improve.
               </h3>
 
-              <p className="mt-3 max-w-2xl leading-7 text-gray-500">
-                I believe consistent learning and hands-on
-                development are the best ways to grow as a
-                software developer.
+              <p className="mt-3 max-w-2xl leading-7 text-gray-700">
+                I believe consistent learning and hands-on development
+                are the best ways to grow as a software developer.
               </p>
             </div>
 
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-white/10 text-2xl text-gray-400">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-black/10 text-2xl text-gray-500 transition duration-300 hover:border-black/20 hover:text-black">
               →
             </div>
 
           </div>
-
         </motion.div>
 
       </div>

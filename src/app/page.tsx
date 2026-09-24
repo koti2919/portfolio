@@ -12,12 +12,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main
-      className="min-h-screen text-black bg-cover bg-center bg-fixed bg-no-repeat"
-      style={{
-        backgroundImage: 'url("/background.png")',
-      }}
-    >
+    <main>
       <Navbar />
       <Hero />
       <About />

@@ -6,34 +6,29 @@ const skillCategories = [
   {
     title: "Programming",
     description:
-      "Languages I use to build applications and solve programming problems.",
+      "Programming languages I use to build applications and solve programming problems.",
     skills: [
-      { name: "Python", level: 85 },
-      { name: "Java", level: 75 },
+      { name: "Python", level: "Good", value: 80 },
+      { name: "Java", level: "Good", value: 70 },
     ],
   },
-
+  {
+    title: "Web Development",
+    description:
+      "Web technologies I use to create the structure, styling and functionality of websites.",
+    skills: [
+      { name: "HTML", level: "Good", value: 80 },
+      { name: "CSS", level: "Good", value: 75 },
+      { name: "JavaScript", level: "Learning", value: 60 },
+    ],
+  },
   {
     title: "Database & AI",
     description:
-      "Technologies I use for data management and intelligent applications.",
+      "Technologies I use for database management and developing AI-based applications.",
     skills: [
-      { name: "SQL", level: 70 },
-      { name: "Artificial Intelligence", level: 70 },
-    ],
-  },
-
-  {
-    title: "Web Technologies",
-    description:
-      "Modern web technologies I use to create responsive and interactive websites.",
-    skills: [
-      { name: "HTML", level: 85 },
-      { name: "CSS", level: 80 },
-      { name: "JavaScript", level: 70 },
-      { name: "React", level: 70 },
-      { name: "Next.js", level: 65 },
-      { name: "TypeScript", level: 60 },
+      { name: "MySQL", level: "Good", value: 70 },
+      { name: "Artificial Intelligence", level: "Learning", value: 60 },
     ],
   },
 ];
@@ -41,23 +36,18 @@ const skillCategories = [
 const technologies = [
   "Python",
   "Java",
-  "SQL",
-  "Artificial Intelligence",
+  "MySQL",
   "HTML",
   "CSS",
   "JavaScript",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Git",
-  "GitHub",
+  "Artificial Intelligence",
 ];
 
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="border-y border-white/10 bg-white/[0.02]"
+      className="border-y border-black/10 bg-transparent text-black"
     >
       <div className="mx-auto max-w-7xl px-6 py-32">
 
@@ -68,11 +58,11 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
+          <p className="text-sm uppercase tracking-[0.3em] text-gray-600">
             02 — Skills
           </p>
 
-          <h2 className="mt-5 max-w-4xl text-5xl font-bold leading-tight sm:text-6xl md:text-8xl">
+          <h2 className="mt-5 max-w-4xl text-5xl font-bold leading-tight tracking-tight text-black sm:text-6xl md:text-8xl">
             Technologies
             <br />
             <span className="text-gray-500">
@@ -80,10 +70,9 @@ export default function Skills() {
             </span>
           </h2>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
-            A growing set of programming languages, web technologies,
-            database tools and AI technologies that I use to build
-            modern applications.
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-700">
+            The programming languages, web technologies, database
+            technologies and AI concepts I have learned and practiced.
           </p>
         </motion.div>
 
@@ -101,26 +90,27 @@ export default function Skills() {
                 delay: categoryIndex * 0.15,
               }}
               whileHover={{ y: -8 }}
-              className="group rounded-3xl border border-white/10 bg-black p-8 transition-colors duration-300 hover:border-white/30 md:p-10"
+              className="group rounded-3xl border border-black/10 bg-white/60 p-8 shadow-sm backdrop-blur-md transition-all duration-500 hover:border-black/20 hover:bg-white/75 md:p-10"
             >
 
-              {/* Category Number */}
+              {/* Number */}
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">
+                <span className="text-sm font-medium text-gray-500">
                   0{categoryIndex + 1}
                 </span>
 
-                <span className="text-gray-600 transition-colors group-hover:text-white">
+                <span className="text-gray-500 transition duration-300 group-hover:translate-x-1 group-hover:text-black">
                   ↗
                 </span>
               </div>
 
               {/* Category Title */}
-              <h3 className="mt-8 text-2xl font-bold">
+              <h3 className="mt-8 text-2xl font-bold text-black">
                 {category.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-gray-500">
+              {/* Description */}
+              <p className="mt-3 text-sm leading-6 text-gray-700">
                 {category.description}
               </p>
 
@@ -130,24 +120,22 @@ export default function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skill.name}>
 
-                    {/* Skill Name + Percentage */}
-                    <div className="mb-3 flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-300">
+                    <div className="mb-3 flex items-center justify-between gap-4">
+                      <span className="text-sm font-medium text-gray-800">
                         {skill.name}
                       </span>
 
-                      <span className="text-xs text-gray-600">
-                        {skill.level}%
+                      <span className="text-xs text-gray-500">
+                        {skill.level}
                       </span>
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
-
+                    <div className="h-1.5 overflow-hidden rounded-full bg-black/10">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{
-                          width: `${skill.level}%`,
+                          width: `${skill.value}%`,
                         }}
                         viewport={{ once: true }}
                         transition={{
@@ -157,9 +145,8 @@ export default function Skills() {
                             skillIndex * 0.1,
                           ease: "easeOut",
                         }}
-                        className="h-full rounded-full bg-white"
+                        className="h-full rounded-full bg-black"
                       />
-
                     </div>
 
                   </div>
@@ -171,17 +158,17 @@ export default function Skills() {
 
         </div>
 
-        {/* Technology Tags */}
+        {/* Technologies */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-8 rounded-3xl border border-white/10 bg-black p-8 md:p-10"
+          className="mt-8 rounded-3xl border border-black/10 bg-white/60 p-8 shadow-sm backdrop-blur-md transition duration-500 hover:border-black/20 hover:bg-white/75 md:p-10"
         >
 
-          <p className="text-sm uppercase tracking-[0.2em] text-gray-500">
-            Technologies
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-600">
+            Skills & Technologies
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -200,12 +187,13 @@ export default function Skills() {
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.3,
-                  delay: index * 0.04,
+                  delay: index * 0.05,
                 }}
                 whileHover={{
                   scale: 1.05,
+                  y: -2,
                 }}
-                className="rounded-full border border-white/10 px-4 py-2 text-sm text-gray-400 transition-colors duration-300 hover:border-white/30 hover:text-white"
+                className="rounded-full border border-black/10 bg-white/70 px-4 py-2 text-sm text-gray-700 transition duration-300 hover:border-black/20 hover:bg-white hover:text-black"
               >
                 {technology}
               </motion.span>
