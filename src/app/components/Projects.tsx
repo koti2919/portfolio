@@ -11,6 +11,7 @@ const projects = [
       "An AI-powered interview preparation platform designed to simulate real interviews and provide intelligent feedback to candidates.",
     technologies: ["AI", "React", "Gemini", "TypeScript"],
     liveLink: "https://ai-interview-platform-tjbg.onrender.com/",
+    githubLink: "",
   },
   {
     number: "02",
@@ -20,6 +21,7 @@ const projects = [
       "An intelligent application that generates professional email responses based on the user's message and preferred communication tone.",
     technologies: ["Python", "Streamlit", "AI"],
     liveLink: "",
+    githubLink: "",
   },
   {
     number: "03",
@@ -29,6 +31,24 @@ const projects = [
       "A modern and responsive developer portfolio built to showcase my skills, projects, experience and technical journey.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     liveLink: "https://portfolio-beige-omega-mrzk62r9fn.vercel.app/",
+    githubLink: "https://github.com/koti2919/portfolio",
+  },
+  {
+    number: "04",
+    category: "AI / CAREER TOOLS",
+    title: "AI Resume Analyzer",
+    description:
+      "An AI-powered resume analysis platform that extracts resume content, compares it with job descriptions, calculates ATS scores, identifies skill gaps, analyzes keywords and provides personalized improvement recommendations.",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "React",
+      "Vite",
+      "NLP",
+      "PyMuPDF",
+    ],
+    liveLink: "https://ai-resume-analyzer-1-txgw.onrender.com/",
+    githubLink: "https://github.com/koti2919/ai-resume-analyzer",
   },
 ];
 
@@ -146,8 +166,10 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* ACTION */}
-                <div className="mt-9">
+                {/* ACTION BUTTONS */}
+                <div className="mt-9 flex flex-wrap gap-3">
+
+                  {/* LIVE DEMO */}
                   {project.liveLink ? (
                     <a
                       href={project.liveLink}
@@ -166,6 +188,23 @@ export default function Projects() {
                       Live Demo Coming Soon
                     </span>
                   )}
+
+                  {/* GITHUB */}
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/70 px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg sm:px-7 sm:py-3.5"
+                    >
+                      <span>GitHub</span>
+
+                      <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
+                        ↗
+                      </span>
+                    </a>
+                  )}
+
                 </div>
 
               </div>
